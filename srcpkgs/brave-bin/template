@@ -1,0 +1,36 @@
+# Real template
+pkgname=brave-bin
+version=1.77.82
+revision=1
+only_for_archs="x86_64"
+short_desc="Secure, fast and private web browser with ad blocker"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+hostmakedepends="tar xz"
+license="Mozilla Public License Version 2.0"
+homepage="https://brave.com"
+distfiles="https://github.com/brave/brave-browser/releases/download/v1.77.82/brave-browser-beta_1.77.82_amd64.deb"
+checksum=08bbc8197027903f63448633b443ea05721abfc6e7a42cc3af84403c8e979989
+nostrip=yes
+
+do_extract() {
+        mkdir -p ${DESTDIR}
+        ar x ${XBPS_SRCDISTDIR}/${pkgname}-1.77.82/brave-browser-beta_1.77.82_amd64.deb
+}
+
+do_install() {
+        tar xf data.tar.xz -C ${DESTDIR}
+
+        # Install the icons
+        for size in 128; do
+                # Create the brave browser xdg directory
+                mkdir -p ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps
+
+                # Copy the brave browser icon
+                mv ${DESTDIR}/opt/brave.com/brave-beta/product_logo_${size}_beta.png \
+                ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/brave-browser-beta.png
+        done
+
+        # Remove the Debian/Ubuntu crontab
+        rm -rf ${DESTDIR}/etc
+        rm -rf ${DESTDIR}/opt/brave.com/brave/cron
+}
