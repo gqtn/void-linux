@@ -1,0 +1,29 @@
+### Template for OnlyOffice
+
+pkgname=onlyoffice
+version=8.3.1
+revision=1
+
+archs="x86_64"
+depdends="libstdc++ curl xdg-utils dejavu-fonts-ttf GConf"
+hostmakedepends="tar xz"
+
+short_desc="Editor suite"
+license="AGPL-3.0"
+homepage="https://www.onlyoffice.com/"
+nostrip=yes
+
+distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v8.3.1/onlyoffice-desktopeditors_amd64.deb"
+checksum=e9ea172ce2ec847a67dde684c79ee597aea70fe82cd4b654113d024a6e287797
+
+
+### Script
+do_extract() {
+        mkdir -p ${DESTDIR}
+        ar x ${XBPS_SRCDISTDIR}/${pkgname}-8.3.1/onlyoffice-desktopeditors_amd64.deb
+}
+
+do_install() {
+        tar xf data.tar.xz -C ${DESTDIR}
+
+}
