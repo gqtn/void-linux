@@ -6,24 +6,25 @@ The template file is prepared for use with [xbps-src](https://github.com/void-li
 
 ---
 ### 🚀 Installation
-- Setup: (do it once if not done already)
+- Setup: (do it once if **not done** already!)
 ```
 git clone https://github.com/void-linux/void-packages
 cd void-packages
 ./xbps-src binary-bootstrap
-git clone https://github.com/gqtn/brave-beta.git ./srcpkgs/brave-bin
+git clone https://github.com/gqtn/void-linux/
+cp -r /path/to/gqtn/void-linux/srcpkgs/brave-beta-bin /path/to/void-packages/srcpkgs/
 ```
 - To install and update Brave Beta:
 ```
 ### To install
-./xbps-src pkg brave-bin
-sudo xbps-install --repository hostdir/binpkgs brave-bin
+./xbps-src pkg brave-beta-bin
+sudo xbps-install --repository hostdir/binpkgs brave-beta-bin
 
 ### To update
-cd srcpkg/brave-bin
+cd srcpkg/brave-beta-bin
 ./update.sh
-./xbps-src pkg brave-bin
-sudo xbps-install --repository hostdir/binpkgs brave-bin
+./xbps-src pkg brave-beta-bin
+sudo xbps-install --repository hostdir/binpkgs brave-beta-bin
 ```
 
 ---
