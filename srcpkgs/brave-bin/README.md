@@ -16,11 +16,6 @@ cp -r /path/to/gqtn/void-linux/srcpkgs/brave-bin /path/to/void-packages/srcpkgs/
 ```
 - To install and update Brave Beta:
 ```
-### To install
-./xbps-src pkg brave-beta-bin
-sudo xbps-install --repository hostdir/binpkgs brave-bin
-
-### To update
 cd srcpkg/brave-beta-bin
 ./update.sh
 ./xbps-src pkg brave-beta-bin
