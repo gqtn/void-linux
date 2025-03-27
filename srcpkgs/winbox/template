@@ -1,0 +1,40 @@
+# Template file for 'winbox' package
+
+pkgname=winbox
+version=4.0beta18
+revision=1
+short_desc="MikroTik WinBox utility for Linux"
+maintainer="gquintana-mail@proton.me"
+license="custom:proprietary" 
+homepage="https://mikrotik.com/"
+distfiles="https://download.mikrotik.com/routeros/winbox/4.0beta18/WinBox_Linux.zip"
+checksum="132be9d6109d625c86430fa440e6783b609d00c688ef9194e14b9ca7b47063ed"
+nostrip=yes
+build_style=fetch
+hostmakedepends="unzip"
+
+do_install() {
+    
+    mkdir -p "${DESTDIR}/usr/bin"
+    mkdir -p "${DESTDIR}/usr/share/winbox/assets/img"
+    mkdir -p "${DESTDIR}/usr/share/applications"
+
+    # // Extract the binary and icon
+    unzip -q "${XBPS_SRCDISTDIR}/${pkgname}-${version}/WinBox_Linux.zip" -d "${PWD}/extracted"
+    install -m755 extracted/WinBox "${DESTDIR}/usr/bin/winbox"
+    install -m644 extracted/assets/img/winbox.png "${DESTDIR}/usr/share/winbox/assets/img/winbox.png"
+
+    # // Creation and installation of the desktop file
+    cat > "${PWD}/winbox.desktop" << 'EOF'
+[Desktop Entry]
+Name=WinBox
+Comment=MikroTik RouterOS management tool
+Exec=/usr/bin/winbox
+Icon=/usr/share/winbox/assets/img/winbox.png
+Terminal=false
+Type=Application
+Categories=Network;Utility;
+EOF
+
+    install -m644 "${PWD}/winbox.desktop" "${DESTDIR}/usr/share/applications/winbox.desktop"
+}
