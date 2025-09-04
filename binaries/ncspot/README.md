@@ -1,18 +1,21 @@
-### This is a simple contribuition to Void Linux community.
+# Spotify TUI!
+
+---
+### 🎵 This is a simple contribuition to Void Linux community.
 
 ![print](./general-view.png)
 
-`ncspot` compiled with `cover` feature.
+---
+### 🖼️ With album preview!
+
+I've compiled this binary with `cover` feature:
 
 ![print](./cover-view.png)
 
-**Requeriments:**
-```
-dbus, libncurses, libssl
-libpulse
-libxcb
-ueberzug
-```
+---
+### 🧰 Requeriments:
+
+`dbus, libncurses, libssl, libpulse, libxcb, ueberzug`
 
 You can check more in:
 - New package request in [Void repo](https://github.com/void-linux/void-packages/pull/33600)
