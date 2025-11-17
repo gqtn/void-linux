@@ -1,5 +1,5 @@
-### Void Linux
-### Guia de Instalação Rápida
+## Void Linux
+### 🛣️ Guia de Instalação Rápida
 
 Esse manual surgiu com propósito de guiar novos usuários de Void Linux durante a instalação e pós instalação.
 A instalação guiada garante:
@@ -9,8 +9,10 @@ A instalação guiada garante:
 - Instalação de servidor de áudio (`pipewire` com gestão via `pavucontrol`);
 - Instalação focada em `Xorg` com `i3-wm`.
 
+![print](print.png)
+
 ---
-### 1. Instalação
+### 🟢 1. Instalação
 
 Para facilitar a instalação, usaremos um script otimizado:
 
@@ -42,7 +44,7 @@ tar -xzf void-pi.x86_64.tgz
 - Aguarde a conclusão da instalação, clique em sair e dê reboot ao sistema.
 
 ---
-### 2. Pós Instalação
+### ☕ 2. Pós Instalação
 
 - Após instalação, certifique-se que tem conectividade de internet:
     - Se estiver usando cabo ethernet, possivelmente terá conectividade;
@@ -121,7 +123,7 @@ Em resumo, isso garantirá um sistema preparado para as demais instalações! :)
 > **Nota4:** Para checar os logs, basta olhar `/var/log/socklog/` ou diretamente via comando `svlogtail`.
 
 ---
-### Firmwares
+### 💻 Firmwares
 
 O Void Linux tem uma descrição bem detalhada dos firmwares que você precisa instalar e/ou que são recomendados. Como uma rápida explicação, os *firmwares* são binários instalados diretamente no seu hardware, e os *drivers* ficam sob responsabilidade do Kernel Linux.
 
@@ -140,7 +142,7 @@ sudo xbps-install -S sof-firmware
 > **Nota 6:** os firmwares só serão habilitados completamente após reboot do sistema! Mas podemos rebootar em breve.
 
 ---
-### Áudio
+### 🔊 Áudio
 
 Como o Void Linux é uma distro *systemd free*, isso singifica que teremos algumas etapas manuais que antes seriam completamente escondidas de você, e isso também significa ajustes no áudio. Para isso, vamos instalar alguns pacotes e alterar alguns scripts:
 
@@ -155,7 +157,7 @@ Como usaremos o `pavucontrol`, que é um editor de áudio gráfico, precisaremos
 Uma forma utilizada é adicionar algumas linhas em `.xinitrc`, mas, faremos isso depois utilizando `dbus` e o `i3`.
 
 ---
-### Xorg, i3 e Vídeo
+### 📺 Xorg, i3 e Vídeo
 
 Colocarei alguns softwares que uso na minha instalação, sinta-se a vontade para fazer adaptações.
 Os softwares que forem específicos e importantes, colocarei algumas notas.
@@ -210,7 +212,7 @@ Em especial:
 - E o `dunst` para gerenciar notificações (que não uso).
 
 --- 
-### Sessão
+### 🫂 Sessão
 
 Após instalação de todos esses pacotes, é recomendado rebootar o sistema.
 Quando iniciar, verifique sua conexão novamente e se todos os serviços iniciaram corretamente.
@@ -246,7 +248,7 @@ EndSection
 Neste ponto, pode reiniciar mais uma vez.
 
 ---
-### Finalizações
+### 🙂 Finalizações
 
 Quando reiniciar mais uma vez, verifique suas conexões e afins, e carregue a sessão digitando: `startx`.
 
