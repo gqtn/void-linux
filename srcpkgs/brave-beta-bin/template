@@ -1,6 +1,6 @@
 # Model for Brave Beta
 pkgname=brave-beta-bin
-version=1.82.147
+version=1.85.106
 revision=1
 only_for_archs="x86_64"
 short_desc="Secure, fast and private web browser with ad blocker"
@@ -8,13 +8,13 @@ maintainer="Cornelius-Figgle <max@fullimage.net>"
 hostmakedepends="tar xz"
 license="Mozilla Public License Version 2.0"
 homepage="https://brave.com"
-distfiles="https://github.com/brave/brave-browser/releases/download/v1.82.147/brave-browser-beta_1.82.147_amd64.deb"
-checksum=24bccacc25acf54b559935021348ba777e98f4e62cb426d83ba5d92340e18fd8
+distfiles="https://github.com/brave/brave-browser/releases/download/v1.85.106/brave-browser-beta_1.85.106_amd64.deb"
+checksum=8063a889251e0788b0a7512114cbba552d64b8931b4c4d7e30f7245e22b31731
 nostrip=yes
 
 do_extract() {
         mkdir -p ${DESTDIR}
-        ar x ${XBPS_SRCDISTDIR}/${pkgname}-1.82.147/brave-browser-beta_1.82.147_amd64.deb
+        ar x ${XBPS_SRCDISTDIR}/${pkgname}-1.85.106/brave-browser-beta_1.85.106_amd64.deb
 }
 
 do_install() {
