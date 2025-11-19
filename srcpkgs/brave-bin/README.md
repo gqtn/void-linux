@@ -11,7 +11,7 @@ The template file is prepared for use with [xbps-src](https://github.com/void-li
 git clone https://github.com/void-linux/void-packages
 cd void-packages
 ./xbps-src binary-bootstrap
-git clone https://github.com/gqtn/void-linux/
+git clone https://github.com/gqtn/void-goodies/
 cp -r /path/to/gqtn/void-goodies/srcpkgs/brave-bin /path/to/void-packages/srcpkgs/
 ```
 - To install and update Brave Beta:
