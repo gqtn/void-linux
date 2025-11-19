@@ -12,7 +12,7 @@ git clone https://github.com/void-linux/void-packages
 cd void-packages
 ./xbps-src binary-bootstrap
 git clone https://github.com/gqtn/void-linux/
-cp -r /path/to/gqtn/void-linux/srcpkgs/brave-bin /path/to/void-packages/srcpkgs/
+cp -r /path/to/gqtn/void-goodies/srcpkgs/brave-bin /path/to/void-packages/srcpkgs/
 ```
 - To install and update Brave Beta:
 ```
