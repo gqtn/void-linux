@@ -1,6 +1,6 @@
-# Real template
+# Model for Brave Beta
 pkgname=brave-bin
-version=1.77.82
+version=1.84.141
 revision=1
 only_for_archs="x86_64"
 short_desc="Secure, fast and private web browser with ad blocker"
@@ -8,13 +8,13 @@ maintainer="Cornelius-Figgle <max@fullimage.net>"
 hostmakedepends="tar xz"
 license="Mozilla Public License Version 2.0"
 homepage="https://brave.com"
-distfiles="https://github.com/brave/brave-browser/releases/download/v1.77.82/brave-browser-beta_1.77.82_amd64.deb"
-checksum=08bbc8197027903f63448633b443ea05721abfc6e7a42cc3af84403c8e979989
+distfiles="https://github.com/brave/brave-browser/releases/download/v1.84.141/brave-browser_1.84.141_amd64.deb"
+checksum=3e9fe3666bbabd330972d55819479165887359cd8b4bd8c2e0d8b3f5c3ef9281
 nostrip=yes
 
 do_extract() {
         mkdir -p ${DESTDIR}
-        ar x ${XBPS_SRCDISTDIR}/${pkgname}-1.77.82/brave-browser-beta_1.77.82_amd64.deb
+        ar x ${XBPS_SRCDISTDIR}/${pkgname}-1.84.141/brave-browser_1.84.141_amd64.deb
 }
 
 do_install() {
@@ -26,8 +26,8 @@ do_install() {
                 mkdir -p ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps
 
                 # Copy the brave browser icon
-                mv ${DESTDIR}/opt/brave.com/brave-beta/product_logo_${size}_beta.png \
-                ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/brave-browser-beta.png
+                mv ${DESTDIR}/opt/brave.com/brave/product_logo_${size}.png \
+                ${DESTDIR}/usr/share/icons/hicolor/${size}x${size}/apps/brave-browser.png
         done
 
         # Remove the Debian/Ubuntu crontab
